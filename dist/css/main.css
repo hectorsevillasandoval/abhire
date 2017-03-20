@@ -1728,7 +1728,16 @@ figure{
   padding: 0;
   width: 100%;
   background-color: #c00000;
-  border-radius:5px 5px 0 0;
+  border-radius:5px 5px 0 0;/*border:1px solid var(--strong-red);*/
+  box-sizing: border-box;
+  position:relative;
+}
+
+.navigation ul:not(.submenu) > li:first-child a:before{
+  content:"\f015";
+  font-family: "fontawesome";
+  padding-right: 2px;
+  font-weight: 300;
 }
 
 .navigation li{
@@ -1738,9 +1747,8 @@ figure{
   flex-basis: 14.27143%;
   width: 14.27143%;
   text-align: center;
-  border-right: 1px solid #840303;
+  border-right: 2px solid #840303;
   box-sizing:border-box;
-  position:relative;
 }
 
 .navigation li:nth-child(1n) {
@@ -1780,6 +1788,22 @@ figure{
   padding-left: 4px;
 }
 
+.navigation li[class*="current"] .submenu{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+}
+
+.navigation li:hover .submenu{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+}
+
 .navigation a{
   display: block;
   color:white;
@@ -1798,14 +1822,16 @@ figure{
 .navigation .submenu{
   position: absolute;
   top:100%;
-  width: 960px;
-  left: -411px;
+  width: 100%;
+  left: 0px;
   background-color: #840303;
+  border: 1px solid #840303;
   border-radius:0;
-  padding-top: 11.2px;
-  padding-top:.7rem;
-  padding-bottom: 11.2px;
-  padding-bottom:.7rem;
+  padding: 16px 8px;
+  padding:1rem .5rem;
+  flex-wrap: wrap;
+  display: none;
+  box-sizing: border-box;
 }
 
 .navigation .submenu li{
@@ -1814,6 +1840,8 @@ figure{
   flex-shrink: 0;
   flex-basis: 19.98%;
   width: 19.98%;
+  width: (100/5)%;
+  border:0;
 }
 
 .navigation .submenu li:nth-child(1n) {
@@ -1831,10 +1859,10 @@ figure{
 }
 
 .navigation .submenu li a{
-  padding-top: 4.8px;
-  padding-top:.3rem;
-  padding-bottom: 4.8px;
-  padding-bottom:.3rem;
+  padding-top: 9.6px;
+  padding-top:.6rem;
+  padding-bottom: 9.6px;
+  padding-bottom:.6rem;
 }
 
 .navigation .submenu li[class*="current"] a{
@@ -1847,7 +1875,7 @@ figure{
 }
 
 .navigation .submenu a{
-  font-size:12px;
+  font-size:14px;
   font-weight:300;
   text-transform:capitalize;
 }
@@ -1855,7 +1883,12 @@ figure{
 .navigation .submenu a:before{
   content:"\f101";
   font-family:"fontawesome";
-  padding-right: 4px;
+  padding-right: 1px;
+}
+
+.navigation .submenu a:hover{
+  background-color: #c00000;
+  border-radius:5px;
 }
 
 @media all and (min-width:0px) {
@@ -1883,7 +1916,7 @@ figure{
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
-    max-width: 960px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1894,7 +1927,7 @@ figure{
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
-    max-width: 960px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1992,6 +2025,7 @@ figure{
   .header__info-searchbox {
     display: inline-block;
     vertical-align: top;
+    padding-right: 0;
   }
 }
 

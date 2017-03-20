@@ -20,14 +20,14 @@ figure{
 
 .container{
 	@media (--tablet){
-		lost-center:960px;
+		lost-center:1200px;
 	}
 }
 
 .header{
   padding: 1rem;
 	@media (--tablet){
-		lost-center:960px;
+		lost-center:1200px;
 	}
   &__logo{
     position:relative;
@@ -89,6 +89,7 @@ figure{
 			@media (--desktop){
 				display: inline-block;
 				vertical-align:top;
+				padding-right: 0;
 			}
 			form{
 				position:relative;
@@ -126,6 +127,7 @@ figure{
 }/* END HEADER */
 
 .navigation{
+
 	ul{
 		list-style:none;
 		lost-flex-container:row;
@@ -133,13 +135,31 @@ figure{
 		width: 100%;
 		background-color:var(--main-red);
 		border-radius:5px 5px 0 0;
+		/*border:1px solid var(--strong-red);*/
+		box-sizing: border-box;
+		position:relative;
+		&:not(.submenu){
+			> li{
+				&:first-child{
+					a{
+						&:before{
+							content:"\f015";
+							font-family: "fontawesome";
+							padding-right: 2px;
+							font-weight: 300;
+						}
+					}
+				}
+			}
+		}
+
 	}
+
 	li{
 		lost-column: 1/7 0 0;
 		text-align: center;
-		border-right:1px solid var(--strong-red);
+		border-right:2px solid var(--strong-red);
 		box-sizing:border-box;
-		position:relative;
 		&:last-child{
 			border-right:0px;
 		}
@@ -156,6 +176,17 @@ figure{
 				font-family:"fontawesome";
 				color:white;
 				padding-left: 4px;
+			}
+
+			.submenu{
+				lost-flex-container: row;
+			}
+
+		}
+
+		&:hover{
+			.submenu{
+				lost-flex-container: row;
 			}
 
 		}
@@ -176,17 +207,22 @@ figure{
 	.submenu{
 		position: absolute;
 		top:100%;
-		width: 960px;
-		left: -411px;
+		width: 100%;
+		left: 0px;
 		background-color: var(--strong-red);
+		border:1px solid var(--strong-red);
 		border-radius:0;
-		padding-top:.7rem;
-		padding-bottom:.7rem;
+		padding:1rem .5rem;
+		flex-wrap: wrap;
+		display: none;
+		box-sizing: border-box;
 		li{
 			lost-column:1/5 0 0;
+			width: (100/5)%;
+			border:0;
 			a{
-				padding-top:.3rem;
-				padding-bottom:.3rem;
+				padding-top:.6rem;
+				padding-bottom:.6rem;
 			}
 			&[class*="current"]{
 				a{
@@ -200,13 +236,18 @@ figure{
 			}
 		}
 		a{
-			font-size:12px;
+			font-size:14px;
 			font-weight:300;
 			text-transform:capitalize;
 			&:before{
 				content:"\f101";
 				font-family:"fontawesome";
-				padding-right: 4px;
+				padding-right: 1px;
+			}
+
+			&:hover{
+				background-color:var(--main-red);
+				border-radius:5px;
 			}
 		}
 	}
