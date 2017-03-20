@@ -1,0 +1,20 @@
+:root{
+  /* COLORS */
+  --body-gray: #d9d9d9;
+  --light-gray: #cccccc;
+  --text-color: #26201d;
+  --main-red: #c00000;
+  --strong-red: #840303;
+
+  /* FONTS */
+  --main-font: "Oswald";
+  --text-font: "Poppins";
+}
+
+
+/* -- Custom Media queries */
+@custom-media --tablet (min-width: 500px);
+/*@custom-media --tablet (max-width: 650px);*/
+@custom-media --desktop (min-width: 800px);
+@custom-media --huge (min-width: 1200px);
+@custom-media --retina (-webkit-min-device-pixel-ratio: 2);
