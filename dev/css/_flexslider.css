@@ -210,26 +210,27 @@ html[xmlns] .flexslider .slides {
   width: 20px;
   height: 20px;
   display: block;
-  background: #666;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--main-red);
+  background: rgba(#c00000, 0.5);
   cursor: pointer;
   text-indent: -9999px;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 3px rgba(#c00000, 0.3);
+  -moz-box-shadow: inset 0 0 3px rgba(#c00000, 0.3);
+  -o-box-shadow: inset 0 0 3px rgba(#c00000, 0.3);
+  box-shadow: inset 0 0 3px rgba(#c00000, 0.3);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
 .flex-control-paging li a:hover {
   background: #333;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(#c00000, 0.7);
 }
 .flex-control-paging li a.flex-active {
   background: #000;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(#c00000, 0.9);
   cursor: default;
+  border:2px solid #f9f9f9;
 }
 .flex-control-thumbs {
   margin: 5px 0 0;
