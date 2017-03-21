@@ -488,8 +488,8 @@ template {
 
 @font-face {
   font-family: 'flexslider-icon';
-  src: url('fonts/flexslider-icon.eot');
-  src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  src: url('../fonts/flexslider-icon.eot');
+  src: url('../fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('../fonts/flexslider-icon.woff') format('woff'), url('../fonts/flexslider-icon.ttf') format('truetype'), url('../fonts/flexslider-icon.svg#flexslider-icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -698,7 +698,7 @@ html[xmlns] .flexslider .slides {
 .flex-control-nav {
   width: 100%;
   position: absolute;
-  bottom: -40px;
+  bottom: 20px;
   text-align: center;
 }
 
@@ -710,8 +710,8 @@ html[xmlns] .flexslider .slides {
 }
 
 .flex-control-paging li a {
-  width: 11px;
-  height: 11px;
+  width: 20px;
+  height: 20px;
   display: block;
   background: #666;
   background: rgba(0, 0, 0, .5);
@@ -1726,6 +1726,7 @@ figure{
   -webkit-box-direction: normal;
           flex-flow: row wrap;
   padding: 0;
+  margin: 0px;
   width: 100%;
   background-color: #c00000;
   border-radius:5px 5px 0 0;/*border:1px solid var(--strong-red);*/
@@ -1832,6 +1833,7 @@ figure{
   flex-wrap: wrap;
   display: none;
   box-sizing: border-box;
+  z-index: 9999;
 }
 
 .navigation .submenu li{
@@ -1891,6 +1893,46 @@ figure{
   border-radius:5px;
 }
 
+/* MAIN SLIDER */
+
+.main__slider{
+	position: relative;
+}
+
+.main__slider-flex-caption{
+  background-color: #262626;
+  max-width:480px;
+  top:25%;
+  z-index: 99999999;
+  box-sizing: border-box;
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  padding-right: 16px;
+  padding-right: 1rem;
+  padding-left: 16px;
+  padding-left: 1rem;
+  border-radius: 0 20px 20px 0;
+}
+
+.main__slider-flex-caption h2{
+  margin:0;
+  color: #c00000;
+  font-size: calc(28px + 10 * ((100vw - 420px) / 860));
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.main__slider-flex-caption p{
+  margin:0;
+  color: white;
+  font-weight: 300;
+  font-size: calc(26px + 12 * ((100vw - 420px) / 860));
+}
+
+/* MAIN SLIDER END */
+
 @media all and (min-width:0px) {
 
   html.mm-opening.mm-columns-0 .mm-slideout {
@@ -1919,6 +1961,23 @@ figure{
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .container--noflex {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container--noflex:before {
+    content: '';
+    display: table;
+  }
+
+  .container--noflex:after {
+    content: '';
+    display: table;
+    clear: both;
   }
 
   .header {
@@ -1975,6 +2034,12 @@ figure{
     margin-right: 0;
     margin-left: auto;
   }
+
+  .main__slider-flex-caption {
+    top: 17%;
+    padding-left: 3rem;
+    position: absolute;
+  }
 }
 
 @media all and (min-width:550px) {
@@ -2027,6 +2092,11 @@ figure{
     vertical-align: top;
     padding-right: 0;
   }
+
+  .main__slider-flex-caption {
+    top: 25%;
+    padding-left: 5rem;
+  }
 }
 
 @media all and (min-width:1100px) {
@@ -2043,6 +2113,17 @@ figure{
     transform: translate(-880px,0);
     -webkit-transform: translate3d(-880px,0,0);
     transform: translate3d(-880px,0,0);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+
+  .main__slider-flex-caption h2 {
+    font-size: 38px;
+  }
+
+  .main__slider-flex-caption p {
+    font-size: 38px;
   }
 }
 
@@ -2128,6 +2209,19 @@ figure{
     transform: translate(-10000px,0);
     -webkit-transform: translate3d(-10000px,0,0);
     transform: translate3d(-10000px,0,0);
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  .flex-direction-nav .flex-prev {
+    opacity: 1;
+    left: 10px;
+  }
+
+  .flex-direction-nav .flex-next {
+    opacity: 1;
+    right: 10px;
   }
 }
 
@@ -2263,15 +2357,13 @@ figure{
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 420px) {
 
-  .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 10px;
+  .main__slider-flex-caption h2 {
+    font-size: 28px;
   }
 
-  .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 10px;
+  .main__slider-flex-caption p {
+    font-size: 26px;
   }
 }
