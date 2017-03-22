@@ -2001,10 +2001,35 @@ figure{
 
 }
 
+.products__wrapper{
+  height:800px;
+}
+
 .products__categories{
   background-color: #c00000;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.products__categories-nav{
+  background-color: #c00000;
+  border-radius: 10px;
+  overflow: hidden;
+  color:white;
+}
+
+.products__categories-nav .mm-navbar{
+  padding: 8px 16px;
+  padding: .5rem 1rem;
+  background-color: #840303;
+}
+
+.products__categories-nav .mm-navbar a{
+  text-transform: uppercase;
+  color:white;
+  margin:0;
+  text-align:center;
+  display: block;
 }
 
 .products__categories-title,
@@ -2018,9 +2043,13 @@ figure{
   text-align:center;
 }
 
+.products__categories .submenu{
+  margin-top:0 !important;
+}
+
 .products__categories-list{
   list-style: none;
-  margin:0;
+  margin-top:0 !important;
   padding: 0;
 }
 
@@ -2047,6 +2076,10 @@ figure{
 .products__categories-list a:hover,
 				.products__categories-list a[class*="live"]{
   background-color: #840303;
+}
+
+.products__categories ul{
+  list-style: none;
 }
 
 .products__grid{
@@ -2357,16 +2390,13 @@ figure{
   }
 
   .products__categories {
-    -webkit-box-flex: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: calc(99.9% * 1/4 - 22.5px);
     width: calc(99.9% * 1/4 - 22.5px);
   }
 
   .products__categories:nth-child(1n) {
+    float: left;
     margin-right: 30px;
-    margin-left: 0;
+    clear: none;
   }
 
   .products__categories:last-child {
@@ -2375,29 +2405,34 @@ figure{
 
   .products__categories:nth-child(4n) {
     margin-right: 0;
-    margin-left: auto;
+    float: right;
+  }
+
+  .products__categories:nth-child(4n + 1) {
+    clear: both;
   }
 
   .products__grid {
-    -webkit-box-flex: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: calc(99.9% * 3/4 - 7.5px);
     width: calc(99.9% * 3/4 - 7.5px);
   }
 
   .products__grid:nth-child(1n) {
+    float: left;
     margin-right: 30px;
-    margin-left: 0;
+    clear: none;
   }
 
   .products__grid:last-child {
     margin-right: 0;
   }
 
-  .products__grid:nth-child(4n) {
+  .products__grid:nth-child(4  no-flexn) {
     margin-right: 0;
-    margin-left: auto;
+    float: right;
+  }
+
+  .products__grid:nth-child(4  no-flexn + 1) {
+    clear: both;
   }
 
   .products__item {

@@ -32,6 +32,7 @@ figure{
 	&--noflex{
 		@media (--tablet){
 			lost-center:1200px no-flex;
+
 		}
 	}
 }
@@ -343,12 +344,34 @@ figure{
 	background-color: white;
 	padding: 1.5rem 1.2rem;
 	box-sizing: border-box;
+	&__wrapper{
+		height:800px;
+	}
 	&__categories{
 		background-color: var(--main-red);
 		border-radius: 10px;
 		overflow: hidden;
 		@media (--tablet){
-			lost-column:1/4;
+			lost-column:1/4 no-flex;
+		}
+		&-nav{
+			background-color: var(--main-red);
+			border-radius: 10px;
+			overflow: hidden;
+			color:white;
+			.mm-navbar{
+				padding: .5rem 1rem;
+				background-color: var(--strong-red);
+				a{
+					text-transform: uppercase;
+					color:white;
+
+					margin:0;
+					text-align:center;
+					display: block;
+				}
+
+			}
 		}
 		&-title,
 		h3{
@@ -359,10 +382,14 @@ figure{
 			padding: 1.3rem 1rem;
 			text-align:center;
 		}
+		.submenu{
+			margin-top:0 !important;
+		}
 		&-list{
 			list-style: none;
-			margin:0;
+			margin-top:0 !important;
 			padding: 0;
+
 			li{
 				border-bottom: 1px solid var(--strong-red);
 			}
@@ -384,13 +411,16 @@ figure{
 				}
 			}
 		}
+		ul{
+			list-style: none;
+		}
 	}
 
 	&__grid{
 		flex-wrap: wrap;
 		lost-flex-container:row;
 		@media (--tablet){
-			lost-column:3/4;
+			lost-column:3/4  no-flex;
 		}
 
 	}

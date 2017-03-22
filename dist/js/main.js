@@ -16,11 +16,15 @@ jQuery(function($){
       ]
   });
 
-  /*$(".products__wrapper").mmenu({
+  /*var categories_var_height = $(".products__categories-list").outerHeight()/2;
 
-               offCanvas: false,
+  $(".products__wrapper").css("min-height", categories_var_height);*/
 
-  });*/
+$(".products__categories-nav").mmenu({
+
+               offCanvas: false
+
+  });
 
 
 
@@ -33,7 +37,7 @@ jQuery(function($){
 
   if($('.navigation > ul > li').hasClass('current-menu-item') && $('.navigation > ul > li').hasClass('menu-item-has-children')){
 
-      $('.navigation').css('margin-bottom', $('.submenu').outerHeight());
+      $('.navigation').css('margin-bottom', $('.navigation .submenu').outerHeight());
 
   }
 
