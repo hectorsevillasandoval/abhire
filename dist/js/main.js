@@ -1,5 +1,29 @@
 jQuery(function($){
 
+
+  $("#mobileNav").mmenu({
+               "extensions": [
+                 "effect-panels-zoom",
+                  "theme-dark"
+               ],
+               "navbars": [
+                  {
+                     "position": "top",
+                     "content": [
+                        "searchfield"
+                     ]
+                  }
+      ]
+  });
+
+  /*$(".products__wrapper").mmenu({
+
+               offCanvas: false,
+
+  });*/
+
+
+
   $('.main__slider').flexslider({
       animation: "slide",
       controlNav: true

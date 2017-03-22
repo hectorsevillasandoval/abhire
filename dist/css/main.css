@@ -1741,6 +1741,41 @@ figure{
 
 /* END HEADER */
 
+#mobileNav{
+	z-index: 99999;
+
+}
+
+.mobile__btn{
+  background-color: #c00000;
+  width:85%;
+  text-align: center;
+  text-decoration: none;
+  color:white;
+  font-size:22px;
+  font-weight:700;
+  text-transform:uppercase;
+  padding: 19.2px;
+  padding: 1.2rem;
+  border-radius:10px;
+  border-bottom: 4px solid #840303;
+  box-sizing:border-box;
+  display: block;
+  margin: 16px auto;
+  margin:1rem auto;
+}
+
+.mobile__btn:before{
+  content: "\f0c9";
+  font-family: "fontawesome";
+  padding-right: 16px;
+  padding-right: 1rem;
+}
+
+.navigation{
+	display: none;
+}
+
 .navigation ul{
   list-style:none;
   display: -webkit-box;
@@ -2114,6 +2149,11 @@ figure{
 
 /* FOOTER */
 
+.footer{
+	margin-bottom: 80px;
+	margin-bottom: 5rem;
+}
+
 .footer .container{
   flex-wrap: wrap;
   background-color: #26201d;
@@ -2219,6 +2259,10 @@ figure{
 
 @media (min-width: 500px) {
 
+  .showOnMobile {
+    display: none;
+  }
+
   .container {
     display: -webkit-box;
     display: flex;
@@ -2300,6 +2344,10 @@ figure{
   .header__info:nth-child(2n) {
     margin-right: 0;
     margin-left: auto;
+  }
+
+  .navigation {
+    display: block;
   }
 
   .main__slider-flex-caption {

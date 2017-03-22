@@ -17,7 +17,11 @@ figure{
   margin:0;
   padding: 0;
 }
-
+.showOnMobile{
+	@media (--tablet){
+		display: none;
+	}
+}
 .container{
 	@media (--tablet){
 		lost-center:1200px;
@@ -134,8 +138,38 @@ figure{
 	}/* END INFO */
 }/* END HEADER */
 
-.navigation{
+#mobileNav{
+	z-index: 99999;
 
+}
+.mobile{
+	&__btn{
+		background-color: var(--main-red);
+		width:85%;
+		text-align: center;
+		text-decoration: none;
+		color:white;
+		font-size:22px;
+		font-weight:700;
+		text-transform:uppercase;
+		padding: 1.2rem;
+		border-radius:10px;
+		border-bottom:4px solid var(--strong-red);
+		box-sizing:border-box;
+		display: block;
+		margin:1rem auto;
+		&:before{
+			content: "\f0c9";
+			font-family: "fontawesome";
+			padding-right: 1rem;
+		}
+	}
+}
+.navigation{
+	display: none;
+	@media (--tablet){
+		display: block;
+	}
 	ul{
 		list-style:none;
 		lost-flex-container:row;
@@ -430,6 +464,7 @@ figure{
 
 /* FOOTER */
 .footer{
+	margin-bottom: 5rem;
 	.container{
 		flex-wrap: wrap;
 		background-color: var(--text-color);
