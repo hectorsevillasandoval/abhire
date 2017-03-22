@@ -22,6 +22,9 @@ figure{
 	@media (--tablet){
 		lost-center:1200px;
 	}
+	&__full{
+		lost-column:1/1;
+	}
 	&--noflex{
 		@media (--tablet){
 			lost-center:1200px no-flex;
@@ -423,3 +426,65 @@ figure{
 
 }
 /* PRODUCTS END */
+
+
+/* FOOTER */
+.footer{
+	.container{
+		flex-wrap: wrap;
+		background-color: var(--text-color);
+		color:white;
+		padding-top: 3rem;
+		box-sizing: border-box;
+		border-radius: 0 0 10px 10px;
+	}
+	&__logo{
+		text-align: center;
+	}
+	&__copy{
+		border-top: 1px solid white;
+		margin-top: 2.5rem;
+		text-align: right;
+		font-weight: 300;
+		font-size: 14px;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		box-sizing: border-box;
+	}
+	.column{
+		lost-column:1/1;
+		border-right: 1px solid white;
+		box-sizing: border-box;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		&:nth-child(4){
+			border-right:0;
+		}
+		@media (--tablet){
+			lost-column:1/2;
+		}
+		@media (--desktop){
+			lost-column:1/4;
+		}
+		h4{
+			text-transform: uppercase;
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			margin: 0 0 1.5rem 0;
+		}
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			margin-bottom: 12px;
+		}
+		a{
+			text-decoration: none;
+			color:white;
+		}
+	}
+}
+/* FOOTER END */
