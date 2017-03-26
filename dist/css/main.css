@@ -2456,6 +2456,16 @@ figure{
   display: none;
 }
 
+.blog__sidebar h2{
+  margin-top: 0;
+  text-align: center;
+}
+
+.blog__main-title{
+  margin-bottom: 64px;
+  margin-bottom: 4rem;
+}
+
 .blog__item{
   margin-bottom: 19.2px;
   margin-bottom: 1.2rem;
@@ -2529,6 +2539,20 @@ figure{
 
 .blog__item-title{
   text-transform: uppercase;
+  position:relative;
+  padding-bottom: 15px;
+  margin-top: 0;
+}
+
+.blog__item-title:after{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:40px;
+  height:6px;
+  background-color: #c00000;
+  display: block;
 }
 
 .blog__item-date{

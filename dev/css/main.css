@@ -627,6 +627,13 @@ figure{
 			display: block;
 			lost-column: 1/3 no-flex;
 		}
+		h2{
+			margin-top: 0;
+			text-align: center;
+		}
+	}
+	&__main-title{
+		margin-bottom: 4rem;
 	}
 	&__item{
 		lost-utility:clearfix;
@@ -651,6 +658,19 @@ figure{
 
 		&-title{
 			text-transform: uppercase;
+			position:relative;
+			padding-bottom: 15px;
+			margin-top: 0;
+			&::after{
+				content: '';
+				position: absolute;
+				left:0;
+				bottom:0;
+				width:40px;
+				height:6px;
+				background-color:var(--main-red);
+				display: block;
+			}
 		}
 		&-date{
 			color: var(--light-gray);
