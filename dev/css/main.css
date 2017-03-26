@@ -12,6 +12,9 @@ body{
   background-color: var(--body-gray);
   font-family: "Roboto Condensed";
 }
+p{
+	line-height:1.5;
+}
 
 figure{
   margin:0;
@@ -599,3 +602,11 @@ figure{
 
 }
 /* FOOTER END */
+
+/* FULLWIDTH TEMPLATE */
+.fullwidth{
+	padding: 1.2rem 1.5rem;
+	background-color:white;
+	box-sizing:border-box;
+}
+/* FULLWIDTH TEMPLATE END */
