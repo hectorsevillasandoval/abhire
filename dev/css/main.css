@@ -143,27 +143,27 @@ figure{
 	z-index: 99999;
 
 }
+#catNav{
+	background-color: var(--main-red);
+	color:white;
+	.mm-navbar a{
+		color:white;
+		text-transform: uppercase;
+	}
+	.mm-next:after,
+	.mm-close:after,
+	.mm-close:before{
+		border-color:white;
+	}
+}
+.categoriesNavigation{
+	&__btn{
+		@mixin buttonred "\f0da";
+	}
+}
 .mobile{
 	&__btn{
-		background-color: var(--main-red);
-		width:85%;
-		text-align: center;
-		text-decoration: none;
-		color:white;
-		font-size:22px;
-		font-weight:700;
-		text-transform:uppercase;
-		padding: 1.2rem;
-		border-radius:10px;
-		border-bottom:4px solid var(--strong-red);
-		box-sizing:border-box;
-		display: block;
-		margin:1rem auto;
-		&:before{
-			content: "\f0c9";
-			font-family: "fontawesome";
-			padding-right: 1rem;
-		}
+		@mixin buttonred;
 	}
 }
 .navigation{
@@ -351,7 +351,9 @@ figure{
 		background-color: var(--main-red);
 		border-radius: 10px;
 		overflow: hidden;
+		display: none;
 		@media (--tablet){
+			display: block;
 			lost-column:1/4 no-flex;
 		}
 		&-nav{
@@ -503,6 +505,19 @@ figure{
 		box-sizing: border-box;
 		border-radius: 0 0 10px 10px;
 	}
+	&__company-info{
+		ul{
+			display: block;
+			&:first-of-type{
+				i{
+					padding-right: 4px;
+					color: var(--main-red);
+				}
+
+			}
+
+		}
+	}
 	&__logo{
 		text-align: center;
 	}
@@ -549,7 +564,38 @@ figure{
 		a{
 			text-decoration: none;
 			color:white;
+			&:hover{
+				color: var(--main-red);
+			}
 		}
 	}
+	&__social{
+		lost-utility: clearfix;
+		margin-top: 20px !important;
+		li{
+			display: inline-block;
+			vertical-align:top;
+			margin-right: 10px;
+			&:last-child{
+				margin: 0;
+			}
+		}
+		a{
+			display:block;
+			background-color: var(--main-red);
+			width: 30px;
+			height:30px;
+			line-height: 30px;
+			text-align:center;
+			border-radius:50%;
+			color: rgba(255,255,255,.8) !important;
+			&:hover{
+				background-color: var(--strong-red);
+				color: rgba(255,255,255,1) !important;
+			}
+
+		}
+	}
+
 }
 /* FOOTER END */
