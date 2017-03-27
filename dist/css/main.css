@@ -1628,6 +1628,25 @@ figure{
   padding: 0;
 }
 
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .container__full{
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
