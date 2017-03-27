@@ -4,7 +4,7 @@
 @import "./_flexslider.css";
 @import "./_mobilemenu.css";
 
-@lost flexbox flex;
+/*@lost flexbox flex;*/
 
 html,
 body{
@@ -44,6 +44,7 @@ figure{
 	}
 }
 .container{
+	lost-utility: clearfix;
 	@media (--tablet){
 		lost-center:1200px;
 	}
@@ -59,6 +60,7 @@ figure{
 }
 
 .header{
+	lost-utility: clearfix;
   padding: 1rem;
 	@media (--tablet){
 		lost-center:1200px;
@@ -194,7 +196,7 @@ figure{
 	}
 	ul{
 		list-style:none;
-		lost-flex-container:row;
+		lost-utility: clearfix;
 		padding: 0;
 		margin: 0px;
 		width: 100%;
@@ -203,7 +205,7 @@ figure{
 		/*border:1px solid var(--strong-red);*/
 		box-sizing: border-box;
 		position:relative;
-		&:not(.submenu){
+		&:not(.sub-menu){
 			> li{
 				&:first-child{
 					a{
@@ -243,14 +245,14 @@ figure{
 				padding-left: 4px;
 			}
 
-			.submenu{
+			.sub-menu{
 				lost-flex-container: row;
 			}
 
 		}
 
 		&:hover{
-			.submenu{
+			.sub-menu{
 				lost-flex-container: row;
 			}
 
@@ -269,7 +271,7 @@ figure{
 			background-color: var(--strong-red);
 		}
 	}
-	.submenu{
+	.sub-menu{
 		position: absolute;
 		top:100%;
 		width: 100%;
@@ -278,7 +280,7 @@ figure{
 		border:1px solid var(--strong-red);
 		border-radius:0;
 		padding:1rem .5rem;
-		flex-wrap: wrap;
+		lost-utility: clearfix;
 		display: none;
 		box-sizing: border-box;
 		z-index: 9999;
@@ -365,6 +367,7 @@ figure{
 	background-color: white;
 	padding: 1.5rem 1.2rem;
 	box-sizing: border-box;
+	lost-utility: clearfix;
 	&__wrapper{
 		height:800px;
 	}
@@ -405,7 +408,7 @@ figure{
 			padding: 1.3rem 1rem;
 			text-align:center;
 		}
-		.submenu{
+		.sub-menu{
 			margin-top:0 !important;
 		}
 		&-list{
@@ -440,8 +443,7 @@ figure{
 	}
 
 	&__grid{
-		flex-wrap: wrap;
-		lost-flex-container:row;
+		lost-utility:clearfix;
 		@media (--tablet){
 			lost-column:3/4  no-flex;
 		}
@@ -487,6 +489,8 @@ figure{
 			font-size: 20px;
 			font-weight: 700;
 			margin:0;
+			text-decoration: none;
+			color: var(--text-color);
 		}
 		&-btn{
 			border-radius: 10px;
@@ -518,6 +522,7 @@ figure{
 /* FOOTER */
 .footer{
 	margin-bottom: 5rem;
+	lost-utility:clearfix;
 	.container{
 		flex-wrap: wrap;
 		background-color: var(--text-color);
@@ -551,6 +556,13 @@ figure{
 		padding-left: 1rem;
 		padding-right: 1rem;
 		box-sizing: border-box;
+		a{
+			color:white;
+			text-decoration: underline;
+			&:hover{
+				color: var(--main-red);
+			}
+		}
 	}
 	.column{
 		lost-column:1/1;
@@ -558,6 +570,7 @@ figure{
 		box-sizing: border-box;
 		padding-left: 1rem;
 		padding-right: 1rem;
+		min-height:160px;
 		&:nth-child(4){
 			border-right:0;
 		}
