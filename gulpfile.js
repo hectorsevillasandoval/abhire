@@ -30,7 +30,7 @@ gulp.task('css', function() {
       cssnested,
       lost(),
       rucksack(),
-      cssnext({ browsers: ['> 5%','ie 8'] }),
+      cssnext({ browsers: ['> 5%','ie > 8'] }),
       mqpacker({ sort: true})/*,
       csswring()*/
     ];

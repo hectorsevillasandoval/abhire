@@ -21,7 +21,7 @@ figure{
 	@media (--tablet){
 		display: none;
 	}
-}
+} 
 .container{
 	@media (--tablet){
 		lost-center:1200px;
