@@ -4,7 +4,7 @@
 @import "./_flexslider.css";
 @import "./_mobilemenu.css";
 
-@lost flexbox flex;
+/*@lost flexbox flex;*/
 
 html,
 body{
@@ -12,10 +12,31 @@ body{
   background-color: var(--body-gray);
   font-family: "Roboto Condensed";
 }
+p{
+	line-height:1.5;
+}
 
 figure{
   margin:0;
   padding: 0;
+}
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .showOnMobile{
 	@media (--tablet){
@@ -23,6 +44,7 @@ figure{
 	}
 } 
 .container{
+	lost-utility: clearfix;
 	@media (--tablet){
 		lost-center:1200px;
 	}
@@ -38,6 +60,7 @@ figure{
 }
 
 .header{
+	lost-utility: clearfix;
   padding: 1rem;
 	@media (--tablet){
 		lost-center:1200px;
@@ -106,8 +129,21 @@ figure{
 			}
 			form{
 				position:relative;
+				&:before{
+					content:"\f002";
+					font-family: "fontawesome";
+					color:white;
+					position:absolute;
+					right: 14px;
+					top:13px;
+					z-index: 999;
+				}
 			}
-			input[type="text"]{
+			.screen-reader-text{
+				display: none;
+			}
+			input[type="text"],
+			input[type="search"]{
 				width: 100%;
 				display: inline-block;
 				padding: .5rem 55px .5rem 1rem;
@@ -117,14 +153,15 @@ figure{
 				position:relative;
 				border:1px solid var(--light-gray);
 			}
-			button{
+			button,
+			input[type="submit"]{
 				background-color: var(--main-red);
 				border:0;
 				color:white;
 				border-radius: 0 5px 5px 0;
 				display: inline-block;
-				padding-left: 1rem;
-				padding-right: 1rem;
+				padding-left: 1.3rem;
+				padding-right: 1.3rem;
 				font-size:18px;
 				height: 46px;
 				position:absolute;
@@ -143,27 +180,27 @@ figure{
 	z-index: 99999;
 
 }
+#catNav{
+	background-color: var(--main-red);
+	color:white;
+	.mm-navbar a{
+		color:white;
+		text-transform: uppercase;
+	}
+	.mm-next:after,
+	.mm-close:after,
+	.mm-close:before{
+		border-color:white;
+	}
+}
+.categoriesNavigation{
+	&__btn{
+		@mixin buttonred "\f0da";
+	}
+}
 .mobile{
 	&__btn{
-		background-color: var(--main-red);
-		width:85%;
-		text-align: center;
-		text-decoration: none;
-		color:white;
-		font-size:22px;
-		font-weight:700;
-		text-transform:uppercase;
-		padding: 1.2rem;
-		border-radius:10px;
-		border-bottom:4px solid var(--strong-red);
-		box-sizing:border-box;
-		display: block;
-		margin:1rem auto;
-		&:before{
-			content: "\f0c9";
-			font-family: "fontawesome";
-			padding-right: 1rem;
-		}
+		@mixin buttonred;
 	}
 }
 .navigation{
@@ -173,7 +210,7 @@ figure{
 	}
 	ul{
 		list-style:none;
-		lost-flex-container:row;
+		lost-utility: clearfix;
 		padding: 0;
 		margin: 0px;
 		width: 100%;
@@ -182,7 +219,7 @@ figure{
 		/*border:1px solid var(--strong-red);*/
 		box-sizing: border-box;
 		position:relative;
-		&:not(.submenu){
+		&:not(.sub-menu){
 			> li{
 				&:first-child{
 					a{
@@ -222,14 +259,14 @@ figure{
 				padding-left: 4px;
 			}
 
-			.submenu{
+			.sub-menu{
 				lost-flex-container: row;
 			}
 
 		}
 
 		&:hover{
-			.submenu{
+			.sub-menu{
 				lost-flex-container: row;
 			}
 
@@ -248,7 +285,7 @@ figure{
 			background-color: var(--strong-red);
 		}
 	}
-	.submenu{
+	.sub-menu{
 		position: absolute;
 		top:100%;
 		width: 100%;
@@ -257,7 +294,7 @@ figure{
 		border:1px solid var(--strong-red);
 		border-radius:0;
 		padding:1rem .5rem;
-		flex-wrap: wrap;
+		lost-utility: clearfix;
 		display: none;
 		box-sizing: border-box;
 		z-index: 9999;
@@ -344,6 +381,7 @@ figure{
 	background-color: white;
 	padding: 1.5rem 1.2rem;
 	box-sizing: border-box;
+	lost-utility: clearfix;
 	&__wrapper{
 		height:800px;
 	}
@@ -351,7 +389,9 @@ figure{
 		background-color: var(--main-red);
 		border-radius: 10px;
 		overflow: hidden;
+		display: none;
 		@media (--tablet){
+			display: block;
 			lost-column:1/4 no-flex;
 		}
 		&-nav{
@@ -382,7 +422,7 @@ figure{
 			padding: 1.3rem 1rem;
 			text-align:center;
 		}
-		.submenu{
+		.sub-menu{
 			margin-top:0 !important;
 		}
 		&-list{
@@ -417,8 +457,7 @@ figure{
 	}
 
 	&__grid{
-		flex-wrap: wrap;
-		lost-flex-container:row;
+		lost-utility:clearfix;
 		@media (--tablet){
 			lost-column:3/4  no-flex;
 		}
@@ -464,6 +503,8 @@ figure{
 			font-size: 20px;
 			font-weight: 700;
 			margin:0;
+			text-decoration: none;
+			color: var(--text-color);
 		}
 		&-btn{
 			border-radius: 10px;
@@ -495,6 +536,7 @@ figure{
 /* FOOTER */
 .footer{
 	margin-bottom: 5rem;
+	lost-utility:clearfix;
 	.container{
 		flex-wrap: wrap;
 		background-color: var(--text-color);
@@ -502,6 +544,19 @@ figure{
 		padding-top: 3rem;
 		box-sizing: border-box;
 		border-radius: 0 0 10px 10px;
+	}
+	&__company-info{
+		ul{
+			display: block;
+			&:first-of-type{
+				i{
+					padding-right: 4px;
+					color: var(--main-red);
+				}
+
+			}
+
+		}
 	}
 	&__logo{
 		text-align: center;
@@ -515,6 +570,13 @@ figure{
 		padding-left: 1rem;
 		padding-right: 1rem;
 		box-sizing: border-box;
+		a{
+			color:white;
+			text-decoration: underline;
+			&:hover{
+				color: var(--main-red);
+			}
+		}
 	}
 	.column{
 		lost-column:1/1;
@@ -522,6 +584,7 @@ figure{
 		box-sizing: border-box;
 		padding-left: 1rem;
 		padding-right: 1rem;
+		min-height:160px;
 		&:nth-child(4){
 			border-right:0;
 		}
@@ -549,7 +612,121 @@ figure{
 		a{
 			text-decoration: none;
 			color:white;
+			&:hover{
+				color: var(--main-red);
+			}
 		}
 	}
+	&__social{
+		lost-utility: clearfix;
+		margin-top: 20px !important;
+		li{
+			display: inline-block;
+			vertical-align:top;
+			margin-right: 10px;
+			&:last-child{
+				margin: 0;
+			}
+		}
+		a{
+			display:block;
+			background-color: var(--main-red);
+			width: 30px;
+			height:30px;
+			line-height: 30px;
+			text-align:center;
+			border-radius:50%;
+			color: rgba(255,255,255,.8) !important;
+			&:hover{
+				background-color: var(--strong-red);
+				color: rgba(255,255,255,1) !important;
+			}
+
+		}
+	}
+
 }
 /* FOOTER END */
+
+/* FULLWIDTH TEMPLATE */
+.fullwidth{
+	padding: 1.2rem 1.5rem;
+	background-color:white;
+	box-sizing:border-box;
+}
+
+/* FULLWIDTH TEMPLATE END */
+
+/* BLOG TEMPLATE */
+.blog{
+	lost-utility: clearfix;
+	&__posts{
+		lost-column:1/1;
+		@media (--tablet){
+			lost-column:2/3 no-flex;
+		}
+	}
+	&__sidebar{
+		display: none;
+		@media (--tablet){
+			display: block;
+			lost-column: 1/3 no-flex;
+		}
+		h2{
+			margin-top: 0;
+			text-align: center;
+		}
+	}
+	&__main-title{
+		margin-bottom: 4rem;
+	}
+	&__item{
+		lost-utility:clearfix;
+		margin-bottom: 1.2rem;
+			&-img{
+				lost-column:1/1;
+				img{
+					width:100%;
+					height:auto;
+				}
+				@media (--tablet){
+					lost-column:1/3 no-flex;
+				}
+			}
+
+			&-content{
+				lost-column:1/1;
+				@media (--tablet){
+					lost-column:2/3 no-flex;
+				}
+			}
+
+		&-title{
+			text-transform: uppercase;
+			position:relative;
+			padding-bottom: 15px;
+			margin-top: 0;
+			&::after{
+				content: '';
+				position: absolute;
+				left:0;
+				bottom:0;
+				width:40px;
+				height:6px;
+				background-color:var(--main-red);
+				display: block;
+			}
+		}
+		&-date{
+			color: var(--light-gray);
+		}
+		&-excerpt{
+			color: var(--text-color);
+			font-weight: 300;
+			border-bottom: 1px solid var(--light-gray);
+			padding-bottom: 1rem;;
+		}
+
+	}
+}
+/* BLOG TEMPLATE END */

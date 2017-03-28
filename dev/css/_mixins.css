@@ -1,0 +1,21 @@
+@define-mixin buttonred $icon: "\f0c9"{
+  background-color: var(--main-red);
+  width:85%;
+  text-align: center;
+  text-decoration: none;
+  color:white;
+  font-size:22px;
+  font-weight:700;
+  text-transform:uppercase;
+  padding: 1.2rem;
+  border-radius:10px;
+  border-bottom:4px solid var(--strong-red);
+  box-sizing:border-box;
+  display: block;
+  margin:1rem auto;
+  &:before{
+    content: $icon;
+    font-family: "fontawesome";
+    padding-right: 1rem;
+  }
+}
