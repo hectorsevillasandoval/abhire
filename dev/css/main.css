@@ -129,8 +129,21 @@ figure{
 			}
 			form{
 				position:relative;
+				&:before{
+					content:"\f002";
+					font-family: "fontawesome";
+					color:white;
+					position:absolute;
+					right: 14px;
+					top:13px;
+					z-index: 999;
+				}
 			}
-			input[type="text"]{
+			.screen-reader-text{
+				display: none;
+			}
+			input[type="text"],
+			input[type="search"]{
 				width: 100%;
 				display: inline-block;
 				padding: .5rem 55px .5rem 1rem;
@@ -140,14 +153,15 @@ figure{
 				position:relative;
 				border:1px solid var(--light-gray);
 			}
-			button{
+			button,
+			input[type="submit"]{
 				background-color: var(--main-red);
 				border:0;
 				color:white;
 				border-radius: 0 5px 5px 0;
 				display: inline-block;
-				padding-left: 1rem;
-				padding-right: 1rem;
+				padding-left: 1.3rem;
+				padding-right: 1.3rem;
 				font-size:18px;
 				height: 46px;
 				position:absolute;

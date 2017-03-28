@@ -68,6 +68,8 @@ $(".products__categories-nav").mmenu({
       controlNav: true
   });
 
+  $(".header__info-searchbox input[type='submit']").val("");
+
   /* Adding the space of the submenu when this is displayed */
 
   if($('.navigation > ul > li').hasClass('current-menu-item') && $('.navigation > ul > li').hasClass('menu-item-has-children')){
