@@ -68,7 +68,7 @@ $(".products__categories-nav").mmenu({
       controlNav: true
   });
 
-  $(".header__info-searchbox input[type='submit']").val("");
+  $(".header__info-searchbox input[type='submit']").val("");
 
   /* Adding the space of the submenu when this is displayed */
 

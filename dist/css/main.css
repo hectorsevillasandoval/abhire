@@ -1827,16 +1827,6 @@ a:hover{
   position:relative;
 }
 
-.header__info-searchbox form:before{
-  content:"\f002";
-  font-family: "fontawesome";
-  color:white;
-  position:absolute;
-  right: 14px;
-  top:13px;
-  z-index: 999;
-}
-
 .header__info-searchbox .screen-reader-text{
   display: none;
 }
@@ -1871,6 +1861,12 @@ a:hover{
   z-index: 99;
   border: 1px solid #cccccc;
   margin: 0;
+  font-family: "fontawesome";
+  z-index: 999;
+}
+
+.header__info-searchbox button:hover,.header__info-searchbox input[type="submit"]:hover{
+  cursor: pointer;
 }
 
 /* END HEADER */

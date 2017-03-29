@@ -169,15 +169,6 @@ a{
 			}
 			form{
 				position:relative;
-				&:before{
-					content:"\f002";
-					font-family: "fontawesome";
-					color:white;
-					position:absolute;
-					right: 14px;
-					top:13px;
-					z-index: 999;
-				}
 			}
 			.screen-reader-text{
 				display: none;
@@ -211,6 +202,11 @@ a{
 				z-index: 99;
 				border:1px solid var(--light-gray);
 				margin: 0;
+				font-family: "fontawesome";
+				z-index: 999;
+				&:hover{
+					cursor: pointer;
+				}
 			}
 
 		}
