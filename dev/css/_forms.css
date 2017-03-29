@@ -1,0 +1,30 @@
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="mail"]{
+  width: 100%;
+  display: inline-block;
+  padding: .5rem 55px .5rem 1rem;
+  box-sizing: border-box;
+  border-radius: 0;
+  height: 46px;
+  position: relative;
+  border: 1px solid #cccccc;
+  margin-bottom: .5rem;
+}
+input[type="submit"] {
+    background-color: #c00000;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    font-size: 18px;
+    height: 46px;
+    border: 1px solid #cccccc;
+    margin-top: .5rem;
+}
+label{
+  display: block;
+}

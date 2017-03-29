@@ -3,6 +3,7 @@
 @import "./_variables.css";
 @import "./_flexslider.css";
 @import "./_mobilemenu.css";
+@import "./_forms.css";
 
 /*@lost flexbox flex;*/
 
@@ -19,6 +20,45 @@ p{
 figure{
   margin:0;
   padding: 0;
+}
+a{
+	text-decoration: none;
+	color: var(--strong-red);
+	&:hover{
+		color: var(--main-red);
+	}
+}
+.wp-pagenavi{
+	text-align: center;
+	margin-top: 1rem;
+	.pages{
+		display: none;
+	}
+	a{
+		border: 1px solid var(--main-red);
+		color: var(--main-red);
+		border-radius: 50%;
+		width:30px;
+		height:30px;
+		line-height: 30px;
+		display: inline-block;
+		margin: 4px;
+		&:hover{
+			background-color: var(--main-red);
+			color:white;
+		}
+	}
+	.current{
+		border: 1px solid var(--main-red);
+		background-color: var(--main-red);
+		color:white;
+		border-radius: 50%;
+		width:30px;
+		height:30px;
+		line-height: 30px;
+		display: inline-block;
+		margin: 4px;
+	}
 }
 .alignleft {
 	display: inline;
@@ -42,7 +82,7 @@ figure{
 	@media (--tablet){
 		display: none;
 	}
-} 
+}
 .container{
 	lost-utility: clearfix;
 	@media (--tablet){
@@ -152,6 +192,7 @@ figure{
 				height:46px;
 				position:relative;
 				border:1px solid var(--light-gray);
+				margin: 0;
 			}
 			button,
 			input[type="submit"]{
@@ -169,6 +210,7 @@ figure{
 				right:0px;
 				z-index: 99;
 				border:1px solid var(--light-gray);
+				margin: 0;
 			}
 
 		}
@@ -260,14 +302,16 @@ figure{
 			}
 
 			.sub-menu{
-				lost-flex-container: row;
+				lost-utility: clearfix;
+				display: block;
 			}
 
 		}
 
 		&:hover{
 			.sub-menu{
-				lost-flex-container: row;
+				lost-utility: clearfix;
+				display: block;
 			}
 
 		}
@@ -300,7 +344,6 @@ figure{
 		z-index: 9999;
 		li{
 			lost-column:1/5 0 0;
-			width: (100/5)%;
 			border:0;
 			a{
 				padding-top:.6rem;
@@ -457,9 +500,11 @@ figure{
 	}
 
 	&__grid{
-		lost-utility:clearfix;
 		@media (--tablet){
 			lost-column:3/4  no-flex;
+		}
+		&-wrapper{
+			lost-utility:clearfix;
 		}
 
 	}
@@ -525,6 +570,7 @@ figure{
 			&:hover{
 				background-color: var(--strong-red);
 				border-bottom: 2px solid var(--main-red);
+				color:white;
 			}
 		}
 	}
@@ -671,10 +717,23 @@ figure{
 		@media (--tablet){
 			display: block;
 			lost-column: 1/3 no-flex;
+			box-sizing: border-box;
+			border-radius: 5px 5px 0 0;
 		}
 		h2{
-			margin-top: 0;
+			margin: 0;
+			padding-top: .8rem;
+			padding-bottom: .8rem;
+			background-color: var(--main-red);
+			color:white;
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;
 			text-align: center;
+			border-radius: 5px 5px 0 0;
+		}
+		section{
+			padding-bottom: 1rem;
 		}
 	}
 	&__main-title{
@@ -699,6 +758,9 @@ figure{
 				@media (--tablet){
 					lost-column:2/3 no-flex;
 				}
+				> a{
+					color: var(--text-color);
+				}
 			}
 
 		&-title{
@@ -706,6 +768,7 @@ figure{
 			position:relative;
 			padding-bottom: 15px;
 			margin-top: 0;
+			color: var(--text-color);
 			&::after{
 				content: '';
 				position: absolute;
