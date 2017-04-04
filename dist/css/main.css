@@ -2254,6 +2254,10 @@ a:hover{
   display: block;
 }
 
+.products__categories h2{
+  margin: 0;
+}
+
 .products__categories-title,
 		.products__categories h3{
   text-transform: uppercase;
@@ -2372,6 +2376,8 @@ a:hover{
   margin:0;
   text-decoration: none;
   color: #26201d;
+  display: block;
+  min-height: 51px;
 }
 
 .products__item-btn{

@@ -474,6 +474,9 @@ a{
 
 			}
 		}
+		h2{
+			margin: 0;
+		}
 		&-title,
 		h3{
 			text-transform: uppercase;
@@ -562,12 +565,15 @@ a{
 				padding-bottom: .5rem;;
 			}
 		}
+
 		&-title{
 			font-size: 20px;
 			font-weight: 700;
 			margin:0;
 			text-decoration: none;
 			color: var(--text-color);
+			display: block;
+			min-height: 51px;
 		}
 		&-btn{
 			border-radius: 10px;
