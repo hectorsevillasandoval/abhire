@@ -72,12 +72,18 @@ $(".products__categories-nav").mmenu({
 
   /* Adding the space of the submenu when this is displayed */
 
-  if($('.navigation > ul > li').hasClass('current-menu-item') && $('.navigation > ul > li').hasClass('menu-item-has-children')){
+  if($('.navigation > div > ul > li.current-menu-item').hasClass('menu-item-has-children')){
 
-      $('.navigation').css('margin-bottom', $('.navigation .submenu').outerHeight());
+      $('.navigation').css('margin-bottom', $('.navigation .sub-menu').outerHeight());
 
   }
 
+  $('.navigation > div > ul > li a').each(function(index){
+    console.log(index);
+    if($("." + index).text() == "Fuel"){
+      $("." + index).parent().addClass("keepActive");
+    }
+  });
 
 
 });

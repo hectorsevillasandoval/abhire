@@ -1879,6 +1879,7 @@ a:hover{
 #catNav{
 	background-color: #c00000;
 	color:white;
+	z-index: 99999;
 }
 
 #catNav .mm-navbar a{
@@ -1916,6 +1917,10 @@ a:hover{
   padding-right: 1rem;
 }
 
+.categoriesNavigation__btn:hover {
+  color: white;
+}
+
 .mobile__btn{
   background-color: #c00000;
   width: 85%;
@@ -1938,6 +1943,10 @@ a:hover{
   font-family: "fontawesome";
   padding-right: 16px;
   padding-right: 1rem;
+}
+
+.mobile__btn:hover {
+  color: white;
 }
 
 .navigation{
@@ -2011,16 +2020,13 @@ a:hover{
   border-radius:0 5px 0 0;
 }
 
-.navigation li[class*="current"]{
-  background-color: #840303;
-}
-
-.navigation li[class*="current"] > a:after{
-  content: "\f103";
-  font-family:"fontawesome";
-  color:white;
-  padding-left: 4px;
-}
+/*background-color:var(--strong-red);
+			> a:after{
+				content: "\f103";
+				font-family:"fontawesome";
+				color:white;
+				padding-left: 4px;
+			}*/
 
 .navigation li[class*="current"] .sub-menu{
   display: block;
@@ -2050,6 +2056,21 @@ a:hover{
   content: '';
   display: table;
   clear: both;
+}
+
+.navigation li.keepActive{
+  background-color: #840303;
+}
+
+.navigation li.keepActive > a:after{
+  content: "\f103";
+  font-family:"fontawesome";
+  color:white;
+  padding-left: 4px;
+}
+
+.navigation li.keepActive .sub-menu{
+  display: block;
 }
 
 .navigation a{
@@ -2152,9 +2173,10 @@ a:hover{
 	position: relative;
 }
 
+/*display: none;*/
+
 .main__slider-flex-caption{
   background-color: #262626;
-  max-width:480px;
   top:25%;
   z-index: 99999999;
   box-sizing: border-box;
@@ -2162,7 +2184,6 @@ a:hover{
   padding-bottom: 2rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  border-radius: 0 20px 20px 0;
 }
 
 .main__slider-flex-caption h2{
@@ -2736,10 +2757,6 @@ a:hover{
 
 @media (min-width: 500px) {
 
-  .showOnMobile {
-    display: none;
-  }
-
   .container {
     max-width: 1200px;
     margin-left: auto;
@@ -2837,18 +2854,13 @@ a:hover{
     clear: both;
   }
 
-  .navigation {
-    display: block;
-  }
-
   .main__slider-flex-caption {
     top: 17%;
     padding-left: 3rem;
-    position: absolute;
+    padding-bottom: 2rem;
   }
 
   .products__categories {
-    display: block;
     width: calc(99.9% * 1/4 - 22.5px);
   }
 
@@ -2868,29 +2880,6 @@ a:hover{
   }
 
   .products__categories:nth-child(4n + 1) {
-    clear: both;
-  }
-
-  .products__grid {
-    width: calc(99.9% * 3/4 - 7.5px);
-  }
-
-  .products__grid:nth-child(1n) {
-    float: left;
-    margin-right: 30px;
-    clear: none;
-  }
-
-  .products__grid:last-child {
-    margin-right: 0;
-  }
-
-  .products__grid:nth-child(4  no-flexn) {
-    margin-right: 0;
-    float: right;
-  }
-
-  .products__grid:nth-child(4  no-flexn + 1) {
     clear: both;
   }
 
@@ -3073,6 +3062,10 @@ a:hover{
 
 @media (min-width: 800px) {
 
+  .showOnTablet {
+    display: none;
+  }
+
   .header__info {
     text-align: right;
     position: relative;
@@ -3091,9 +3084,48 @@ a:hover{
     padding-right: 0;
   }
 
+  .navigation {
+    display: block;
+    margin-bottom: 69px;
+  }
+
+  .main__slider {
+    display: block;
+  }
+
   .main__slider-flex-caption {
     top: 25%;
     padding-left: 5rem;
+    max-width: 480px;
+    position: absolute;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .products__categories {
+    display: block;
+  }
+
+  .products__grid {
+    width: calc(99.9% * 3/4 - 7.5px);
+  }
+
+  .products__grid:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+
+  .products__grid:last-child {
+    margin-right: 0;
+  }
+
+  .products__grid:nth-child(4  no-flexn) {
+    margin-right: 0;
+    float: right;
+  }
+
+  .products__grid:nth-child(4  no-flexn + 1) {
+    clear: both;
   }
 
   .products__item {

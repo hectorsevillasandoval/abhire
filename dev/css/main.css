@@ -78,8 +78,8 @@ a{
 	margin-left: auto;
 	margin-right: auto;
 }
-.showOnMobile{
-	@media (--tablet){
+.showOnTablet{
+	@media (--desktop){
 		display: none;
 	}
 }
@@ -221,6 +221,7 @@ a{
 #catNav{
 	background-color: var(--main-red);
 	color:white;
+	z-index: 99999;
 	.mm-navbar a{
 		color:white;
 		text-transform: uppercase;
@@ -243,8 +244,9 @@ a{
 }
 .navigation{
 	display: none;
-	@media (--tablet){
+	@media (--desktop){
 		display: block;
+		margin-bottom: 69px;
 	}
 	ul{
 		list-style:none;
@@ -282,6 +284,7 @@ a{
 		&:last-child{
 			border-right:0px;
 		}
+
 		&:first-child a{
 			border-radius:5px 0 0 0;
 		}
@@ -289,13 +292,13 @@ a{
 			border-radius:0 5px 0 0;
 		}
 		&[class*="current"]{
-			background-color:var(--strong-red);
+			/*background-color:var(--strong-red);
 			> a:after{
 				content: "\f103";
 				font-family:"fontawesome";
 				color:white;
 				padding-left: 4px;
-			}
+			}*/
 
 			.sub-menu{
 				lost-utility: clearfix;
@@ -310,6 +313,18 @@ a{
 				display: block;
 			}
 
+		}
+		&.keepActive{
+			background-color: var(--strong-red);
+			> a:after{
+				content: "\f103";
+				font-family:"fontawesome";
+				color:white;
+				padding-left: 4px;
+			}
+			.sub-menu{
+				display: block;
+			}
 		}
 
 	}
@@ -377,9 +392,12 @@ a{
 /* MAIN SLIDER */
 .main__slider{
 	position: relative;
+	/*display: none;*/
+	@media (--desktop){
+		display: block;
+	}
 	&-flex-caption{
 		background-color: #262626;
-		max-width:480px;
 		top:25%;
 		z-index: 99999999;
 		box-sizing: border-box;
@@ -387,15 +405,17 @@ a{
 		padding-bottom: 2rem;
 		padding-right: 1rem;
 		padding-left: 1rem;
-		border-radius: 0 20px 20px 0;
 		@media (--tablet){
 			top:17%;
 			padding-left: 3rem;
-			position: absolute;
+			padding-bottom: 2rem;
 		}
 		@media (--desktop){
 			top:25%;
 			padding-left: 5rem;
+			max-width:480px;
+			position: absolute;
+			border-radius: 0 20px 20px 0;
 		}
 		h2{
 			margin:0;
@@ -430,8 +450,10 @@ a{
 		overflow: hidden;
 		display: none;
 		@media (--tablet){
-			display: block;
 			lost-column:1/4 no-flex;
+		}
+		@media (--desktop){
+			display: block;
 		}
 		&-nav{
 			background-color: var(--main-red);
@@ -496,7 +518,7 @@ a{
 	}
 
 	&__grid{
-		@media (--tablet){
+		@media (--desktop){
 			lost-column:3/4  no-flex;
 		}
 		&-wrapper{
